@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "~/.arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino5/avr/include/**",
+                "~/.arduino15/packages/MightyCore/hardware/avr/2.0.4/**",
+                "~/.arduino15/packages/MightyCore/hardware/avr/2.0.4/**"
+            ],
+            "defines": [
+                "__AVR_ATmega324PA__"
+            ],
+            "forcedInclude": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,8 @@
+{
+    "board": "MightyCore:avr:324",
+    "configuration": "bootloader=no_bootloader,pinout=standard,variant=modelPA,BOD=2v7,LTO=Os,clock=1MHz_internal",
+    "sketch": "atmega-clock-firmware.ino",
+    "output": "./build",
+    "programmer": "USBtinyISP",
+    "port": "/dev/ttyS0"
+}

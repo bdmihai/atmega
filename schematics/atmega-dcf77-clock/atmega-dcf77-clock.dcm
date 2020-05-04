@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MAX667
+D 250mA Dual Mode 5V/Programmable Micropower Voltage Regulator, DIP-8/SO-8
+K Linear LDO Regulator 250mA 5V fixed
+F https://pdfserv.maximintegrated.com/en/ds/MAX667.pdf
+$ENDCMP
+#
+#End Doc Library
