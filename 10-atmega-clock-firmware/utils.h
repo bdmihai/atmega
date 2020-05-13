@@ -27,6 +27,9 @@
  
 #pragma once
 
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <avr/wdt.h>
 #include <util/delay.h>
 
 inline void delay_ms(int ms) 

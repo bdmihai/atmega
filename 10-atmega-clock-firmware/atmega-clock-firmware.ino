@@ -160,6 +160,8 @@ void increment_clock()
 void button_handler()
 {
     const long default_cycle_delay = CYCLE_DELAY_TIME;
+    const long default_lcd_led = LCD_LED_ON;
+
     if (gpio_get_button_status() & GPIO_BUTTON_PRESSED_DEBOUNCED) {
         // the button was pressed and debounced
     } else if (gpio_get_button_status() & GPIO_BUTTON_PRESSED) {
@@ -178,6 +180,10 @@ void button_handler()
 
     // if the button is pressed for ore than 3 seconds reinitialize the clock
     if ((gpio_get_button_pressed_duration() > 30)) {
+        // write the values to eeprom
+        eeprom_write(0, &default_cycle_delay, sizeof(default_cycle_delay));
+        eeprom_write(4, &default_lcd_led, sizeof(default_lcd_led));
+
         // notify the user about reset
         for (int i = 0; i < 3; i++) {
             gpio_set_warn_led();
@@ -189,11 +195,10 @@ void button_handler()
         while (!(gpio_get_button_status() & GPIO_BUTTON_RELEASED_DEBOUNCED)) {
             delay_ms(10);
         }
-        eeprom_write(0, &default_cycle_delay, sizeof(default_cycle_delay));
-        delay_ms(200);
 
         // reinitialize the clock and update the display
         init_clock();
+        config_display();
         update_display();
     }
 }
